@@ -1,0 +1,17 @@
+---
+server:
+  port: ${PORT:8811}
+
+spring:
+  application:
+    name: user-service
+
+logging:
+  level:
+    com.fedex.sad: DEBUG
+
+eureka:
+  client:
+    region: default
+    serviceUrl: 
+      defaultZone: http://eurekaAdmin:eurekaAdmin@localhost:8761/eureka/

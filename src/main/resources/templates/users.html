@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<link href="myStyles.css" rel="stylesheet" />
+		<title>Users Service</title>
+	</head>
+	<body>
+	
+		<h2 th:if="${message != null}"><span th:text = "${message}"></span></h2>
+		<div th:if="${users != null}">
+			<h2>List of Users</h2>
+			
+			<table>
+				<tr>
+					<th>User ID</th>
+					<th>User Name</th>
+					<th>Email</th>
+				</tr>
+				<tr th:each = "user: ${users}">
+					<td th:text = "${user.id}">...</td>
+					<td th:text = "${user.name}">...</td>
+					<td th:text = "${user.email}">...</td>
+				</tr>
+						
+			</table>	
+		</div>
+		
+		<br/><br/>
+		<form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>			
+		</form>
+			
+	</body>
+</html>
